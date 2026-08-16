@@ -1,0 +1,245 @@
+.workspace {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.ws-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.ws-breadcrumb {
+  margin-bottom: 6px;
+}
+.ws-breadcrumb a {
+  color: var(--text-dim);
+}
+
+.ws-tabs {
+  display: flex;
+  gap: 4px;
+  border-bottom: 1px solid var(--border);
+  overflow-x: auto;
+}
+.ws-tab {
+  background: none;
+  border: none;
+  color: var(--text-dim);
+  font-size: 14px;
+  font-weight: 600;
+  padding: 10px 16px;
+  border-bottom: 2px solid transparent;
+  white-space: nowrap;
+}
+.ws-tab:hover {
+  color: var(--text);
+}
+.ws-tab.active {
+  color: var(--accent);
+  border-bottom-color: var(--accent);
+}
+
+.ws-body {
+  min-height: 300px;
+}
+
+.panel-title {
+  font-size: 18px;
+  margin-bottom: 8px;
+}
+
+/* Media */
+.media-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 14px;
+}
+.media-item {
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+.media-item img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  display: block;
+}
+.media-video-placeholder {
+  height: 180px;
+  display: grid;
+  place-items: center;
+  color: var(--text-dim);
+  font-size: 13px;
+}
+.media-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 10px;
+  gap: 8px;
+}
+
+/* Enhance */
+.ba-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 16px;
+}
+.ba-pair {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+.ba-pair img {
+  width: 100%;
+  aspect-ratio: 4/5;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+}
+.ba-label {
+  font-size: 12px;
+  color: var(--text-dim);
+  margin-bottom: 4px;
+  font-weight: 600;
+}
+.ba-item {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Concepts */
+.concept-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 16px;
+}
+.concept-card {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.concept-card.active {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 1px var(--accent);
+}
+.concept-pillars {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+.concept-title {
+  font-size: 16px;
+}
+.concept-hook {
+  font-style: italic;
+  margin: 0;
+}
+.concept-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+/* Carousel editor */
+.slide-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-top: 16px;
+}
+.slide-row {
+  display: flex;
+  gap: 16px;
+}
+.slide-thumb {
+  position: relative;
+  width: 110px;
+  flex-shrink: 0;
+}
+.slide-thumb img {
+  width: 110px;
+  aspect-ratio: 4/5;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+}
+.slide-num {
+  position: absolute;
+  top: 6px;
+  left: 6px;
+  background: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  font-size: 11px;
+  border-radius: 4px;
+  padding: 1px 6px;
+}
+.slide-fields {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.slide-controls {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.checkbox {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--text-dim);
+}
+
+/* Caption */
+.caption-block {
+  font-size: 15px;
+  line-height: 1.7;
+}
+.cap-hook {
+  font-weight: 700;
+  font-size: 17px;
+  margin-bottom: 10px;
+}
+.cap-question {
+  font-weight: 600;
+  margin-top: 10px;
+}
+.cap-cta {
+  color: var(--accent);
+}
+.cap-hashtags {
+  margin-top: 12px;
+  color: var(--accent);
+  word-break: break-word;
+}
+
+/* Review */
+.review-card {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-width: 560px;
+}
+.review-actions {
+  display: flex;
+  gap: 10px;
+}
+
+@media (max-width: 700px) {
+  .slide-row {
+    flex-direction: column;
+  }
+  .slide-thumb,
+  .slide-thumb img {
+    width: 100%;
+  }
+}

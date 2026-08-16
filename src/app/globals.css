@@ -1,0 +1,79 @@
+:root {
+  --bg: #0e1410;
+  --bg-elevated: #16201a;
+  --surface: #1c2a21;
+  --surface-2: #22332a;
+  --border: #2c3f32;
+  --text: #eaf3ec;
+  --text-dim: #9db3a4;
+  --text-faint: #6b8073;
+  --accent: #6fbf8a;
+  --accent-strong: #4ea86f;
+  --accent-soft: rgba(111, 191, 138, 0.14);
+  --warn: #e0b054;
+  --danger: #e06c5f;
+  /* Semantic aliases used by component styles */
+  --brand: var(--accent);
+  --muted: var(--text-dim);
+  --surface-3: #2a3f31;
+  --radius: 14px;
+  --radius-lg: 20px;
+  --maxw: 1280px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', 'Helvetica Neue', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.5;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--accent-strong);
+}
+
+h1,
+h2,
+h3,
+h4 {
+  margin: 0;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+::selection {
+  background: var(--accent-soft);
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}

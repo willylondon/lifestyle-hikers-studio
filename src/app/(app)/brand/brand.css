@@ -1,0 +1,21 @@
+.pill-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 12px;
+}
+.series-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 12px;
+}
+.series-item {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.series-name {
+  font-weight: 600;
+  font-size: 14px;
+}

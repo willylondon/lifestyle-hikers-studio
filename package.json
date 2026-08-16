@@ -1,0 +1,37 @@
+{
+  "name": "lifestyle-hikers-studio",
+  "version": "1.0.0",
+  "private": true,
+  "description": "AI content operating system for Lifestyle Hikers Jamaica — turn real hiking media into brand-aligned Instagram carousel campaigns.",
+  "type": "module",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "db:migrate": "tsx scripts/migrate.ts"
+  },
+  "dependencies": {
+    "@types/heic-convert": "^2.1.1",
+    "bcryptjs": "^2.4.3",
+    "heic-convert": "^2.1.0",
+    "jose": "^5.9.6",
+    "jszip": "^3.10.1",
+    "next": "^15.1.6",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "sharp": "^0.33.5",
+    "zod": "^3.24.1"
+  },
+  "devDependencies": {
+    "@types/bcryptjs": "^2.4.6",
+    "@types/node": "^22.10.7",
+    "@types/react": "^19.0.7",
+    "@types/react-dom": "^19.0.3",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.3",
+    "vitest": "^2.1.8"
+  }
+}
