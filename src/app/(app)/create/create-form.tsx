@@ -41,6 +41,15 @@ export function CreateForm() {
 
   async function submit(e: React.FormEvent) {
     e.preventDefault();
+    if (!name.trim()) {
+      setError('Please provide a Hike / Project name at the top before analyzing.');
+      const nameInput = document.getElementById('hike-name');
+      if (nameInput) {
+        nameInput.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        nameInput.focus();
+      }
+      return;
+    }
     setError('');
     setLoading(true);
     setStage('Creating project…');
@@ -121,8 +130,15 @@ export function CreateForm() {
     <form onSubmit={submit} className="create-form card">
       <div className="grid grid-2">
         <div className="field">
-          <label>Hike / project name *</label>
-          <input className="input" value={name} onChange={(e) => setName(e.target.value)} placeholder="Heineken River Hike" required />
+          <label htmlFor="hike-name">Hike / project name *</label>
+          <input
+            id="hike-name"
+            className="input"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+            placeholder="Heineken River Hike"
+            required
+          />
         </div>
         <div className="field">
           <label>Location (parish / area)</label>
@@ -189,8 +205,13 @@ export function CreateForm() {
       {error && <div className="auth-error">{error}</div>}
       {stage && !error && <div className="stage-note">{stage}</div>}
 
-      <button className="btn btn-primary" style={{ marginTop: 18 }} disabled={loading || !name}>
-        {loading ? 'Working…' : (files.length || driveFiles.length) ? 'Analyze & Create' : 'Create project'}
+      <button
+        type="submit"
+        className="btn btn-primary"
+        style={{ marginTop: 18, width: '100%', justifyContent: 'center', minHeight: 46 }}
+        disabled={loading}
+      >
+        {loading ? (stage || 'Working…') : (files.length || driveFiles.length) ? 'Analyze & Create' : 'Create project'}
       </button>
     </form>
   );

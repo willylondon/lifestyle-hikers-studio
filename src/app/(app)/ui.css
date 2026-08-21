@@ -16,6 +16,28 @@
   z-index: 50;
 }
 
+@media (max-width: 768px) {
+  .topbar {
+    padding: 10px 14px;
+    gap: 10px;
+    flex-wrap: wrap;
+    position: relative;
+  }
+  .brand-name {
+    display: none;
+  }
+  .nav {
+    gap: 2px;
+  }
+  .nav-link {
+    padding: 5px 8px;
+    font-size: 13px;
+  }
+  .main {
+    padding: 16px 14px 60px;
+  }
+}
+
 .brand {
   display: flex;
   align-items: center;
