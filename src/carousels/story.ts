@@ -246,24 +246,26 @@ function fitStoryToAvailablePhotos(
   slides: SlideBlueprint[],
   assetCount: number,
 ): SlideBlueprint[] {
-  if (assetCount >= slides.length || assetCount < 6 || concept.pillar !== 'Community') return slides;
+  if (assetCount >= slides.length || assetCount <= 0) return slides;
 
-  const find = (pattern: RegExp) => slides.find((slide) => pattern.test(slide.headline));
-  const compact = [
-    slides.find((slide) => slide.role === 'hook'),
-    slides.find((slide) => slide.role === 'setup'),
-    find(/group became the story/i),
-    find(/celebrate the people/i),
-    find(/young hikers/i),
-    {
-      role: 'cta' as const,
-      headline: 'The best reward is who you share it with.',
-      body: 'The photos carry the landscape. The memories carry the people. Follow @LifestyleHikers and walk with us.',
-      photoTags: ['portrait', 'person', 'hiker'],
-    },
-  ].filter((slide): slide is SlideBlueprint => Boolean(slide));
+  // Exact 1-to-1 match: if user uploaded N photos (e.g. 5), generate exactly N slides
+  const hookSlide = slides.find((s) => s.role === 'hook') ?? slides[0];
+  const ctaSlide = slides.find((s) => s.role === 'cta') ?? slides[slides.length - 1];
 
-  return compact.slice(0, assetCount);
+  if (assetCount === 1) return [hookSlide];
+  if (assetCount === 2) return [hookSlide, ctaSlide];
+
+  // Middle body slides
+  const middleCandidates = slides.filter((s) => s.role !== 'hook' && s.role !== 'cta');
+  const neededMiddle = assetCount - 2;
+  const step = middleCandidates.length / neededMiddle;
+  const selectedMiddle: SlideBlueprint[] = [];
+  for (let i = 0; i < neededMiddle; i++) {
+    const idx = Math.min(Math.floor(i * step), middleCandidates.length - 1);
+    selectedMiddle.push(middleCandidates[idx]);
+  }
+
+  return [hookSlide, ...selectedMiddle, ctaSlide];
 }
 
 /**
