@@ -9,8 +9,8 @@ import { config } from '../lib/config';
 const W = config.limits.slideWidth;
 const H = config.limits.slideHeight;
 
-const HEADLINE_FONT = "'Arial Black', 'Inter', 'Helvetica Neue', Arial, sans-serif";
-const BODY_FONT = "'Inter', 'Helvetica Neue', Arial, sans-serif";
+const HEADLINE_FONT = "system-ui, -apple-system, 'DejaVu Sans', 'Liberation Sans', Arial, sans-serif";
+const BODY_FONT = "system-ui, -apple-system, 'DejaVu Sans', 'Liberation Sans', Arial, sans-serif";
 const ACCENT = '#D2B072';
 
 function esc(s: string): string {
