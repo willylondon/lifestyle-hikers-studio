@@ -255,6 +255,15 @@ function CarouselPanel({ carousel, projectId, assetById, onUpdate }: { carousel:
             <div className="slide-thumb">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img src={s.assetId ? `/api/media/enhanced/${assetById.get(s.assetId)?.sourceId}.jpg` : ''} alt="" onError={(e) => { (e.target as HTMLImageElement).style.opacity = '0.2'; }} />
+              <div className={`slide-overlay-preview pos-${s.textPosition}`}>
+                {s.showBranding && <div className="slide-preview-brand">LIFESTYLE HIKERS</div>}
+                <div className="slide-preview-headline">{s.headline}</div>
+                {s.body && <div className="slide-preview-body">{s.body}</div>}
+                <div className="slide-preview-footer">
+                  <span>{s.pageLabel}</span>
+                  <span>@LifestyleHikers</span>
+                </div>
+              </div>
               <span className="slide-num">{s.order}</span>
             </div>
             <div className="slide-fields">
