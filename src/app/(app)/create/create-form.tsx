@@ -130,7 +130,9 @@ export function CreateForm() {
     <form onSubmit={submit} className="create-form card">
       <div className="grid grid-2">
         <div className="field">
-          <label htmlFor="hike-name">Hike / project name *</label>
+          <label htmlFor="hike-name">
+            Hike / project name <span style={{ color: 'var(--accent)', fontWeight: 700 }}>*</span>
+          </label>
           <input
             id="hike-name"
             className="input"
